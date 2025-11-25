@@ -20,7 +20,7 @@
       min-height: 100vh;
     }
 
-    /* 左侧竖排菜单 */
+    /* 左侧菜单 */
     .sidebar {
       padding: 24px 20px;
       border-right: 1px solid #e3e3e3;
@@ -36,39 +36,34 @@
       line-height: 1.3;
     }
 
-    .nav {
-      font-size: 13px;
-      line-height: 1.9;
-    }
-
     .nav a {
       display: block;
+      margin-bottom: 8px;
+      font-size: 13px;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
       opacity: 0.7;
+      cursor: pointer;
     }
 
-    .nav a.active,
-    .nav a:hover {
+    .nav a.active {
       opacity: 1;
       background: #e4f4de;
       padding: 2px 4px;
-      margin-left: -4px;
       border-radius: 3px;
     }
 
-    .sidebar-meta {
-      margin-top: auto;
-      font-size: 11px;
-      opacity: 0.6;
+    /* 右侧内容区域 */
+    .content {
+      padding: 32px 32px 80px;
     }
 
-    /* 右侧作品区域 */
-    .content {
-      padding: 24px 24px 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+    section {
+      display: none; /* 默认全部隐藏 */
+    }
+
+    section.active {
+      display: block; /* 被选中的显示 */
     }
 
     .section-label {
@@ -76,110 +71,126 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       opacity: 0.6;
+      margin-bottom: 12px;
     }
 
-    .hero-work {
-      flex: 1;
-      background: #dce6f7;
-      border-radius: 6px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    /* 这里以后可以换成真正作品图片 */
-    .hero-placeholder {
-      text-align: center;
-      padding: 20px;
-    }
-
-    .hero-placeholder-title {
-      font-size: 14px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .hero-placeholder-meta {
-      font-size: 12px;
-      opacity: 0.75;
-    }
-
-    /* 响应式：窄屏时上下布局 */
-    @media (max-width: 800px) {
-      .layout {
-        grid-template-columns: 1fr;
-      }
-      .sidebar {
-        border-right: none;
-        border-bottom: 1px solid #e3e3e3;
-        flex-direction: row;
-        align-items: flex-end;
-        gap: 16px;
-      }
-      .sidebar-meta {
-        display: none;
-      }
+    /* 内容段落美化 */
+    section p {
+      margin-bottom: 12px;
+      max-width: 700px;
     }
   </style>
 </head>
+
 <body>
   <div class="layout">
-    <!-- 左边菜单 -->
+
+    <!-- 左侧菜单 -->
     <aside class="sidebar">
-      <div class="name">
-        SU SEVEN<br />
-        ART
-      </div>
+      <div class="name">SU SEVEN<br>ART</div>
 
       <nav class="nav">
-        <!-- 现在先做锚点，后面可以改成独立页面 sculpture.html 等 -->
-        <a href="#sculpture" class="active">Sculpture</a>
-        <a href="#painting">Painting</a>
-        <a href="#video">Video</a>
-        <a href="#exhibitions">Exhibitions</a>
-        <a href="#about">About</a>
-        <a href="#cv">CV</a>
-        <a href="#contact">Contact</a>
+        <a data-target="sculpture" class="active">Sculpture</a>
+        <a data-target="painting">Painting</a>
+        <a data-target="video">Video</a>
+        <a data-target="exhibitions">Exhibitions</a>
+        <a data-target="about">About</a>
+        <a data-target="cv">CV</a>
+        <a data-target="contact">Contact</a>
       </nav>
-
-      <div class="sidebar-meta">
-        Based in London<br/>
-        Email: <a href="mailto:suseven.art@gmail.com">suseven.art@gmail.com</a>
-      </div>
     </aside>
 
-    <!-- 右边内容：先只放雕塑大图，占满屏 -->
+    <!-- 右侧内容 -->
     <main class="content">
-          <!-- Sculpture -->
-      <div class="section-label" id="sculpture">Sculpture</div>
-      <section>
-        <p><strong>Deficit</strong> · Sculpture · Series of five sculptures about deficit and value under capitalism.</p>
-        <p><strong>Soccer Tribe</strong> · outdoor sculpture · A football-based sculpture about movement, crowd and ritual.</p>
-        <p><strong>Control</strong> · sculpture · A study on control, pressure and bodily tension.</p>
+
+      <!-- Sculpture -->
+      <section id="sculpture" class="active">
+        <div class="section-label">SCULPTURE</div>
+
+        <p><strong>Deficit</strong> · sculpture  
+        Series of five sculptures exploring deficit, value and economic tension.</p>
+
+        <p><strong>Soccer Tribe</strong> · sculpture  
+        Outdoor football sculpture about collective movement and ritual.</p>
+
+        <p><strong>Control</strong> · sculpture  
+        Sculptural study on restraint, pressure and bodily tension.</p>
       </section>
 
       <!-- Painting -->
-      <div class="section-label" id="painting" style="margin-top:32px;">PAINTING</div>
-      <section>
-        <p><strong>For What?</strong> · painting · Part of an ongoing series questioning purpose and productivity.</p>
-        <p><strong>Perception</strong> · painting · Exploring how perception is filtered through systems and memory.</p>
+      <section id="painting">
+        <div class="section-label">PAINTING</div>
+
+        <p><strong>For What?</strong> · painting  
+        Part of an ongoing series questioning purpose and productivity.</p>
+
+        <p><strong>Perception</strong> · painting  
+        Exploring how perception and cognition are shaped by internal systems.</p>
       </section>
 
       <!-- Video -->
-      <div class="section-label" id="video" style="margin-top:32px;">VIDEO</div>
-      <section>
-        <p><strong>Stone’s Talk</strong> · video · A conversation with non-human time through stones and slow images.</p>
+      <section id="video">
+        <div class="section-label">VIDEO</div>
+
+        <p><strong>Stone’s Talk</strong> · video  
+        A conversation with non-human time through stones and slow images.</p>
       </section>
 
-      <!-- 这些锚点先保留，方便以后拓展页面 -->
-      <div id="exhibitions"></div>
-      <div id="about"></div>
-      <div id="cv"></div>
-      <div id="contact"></div>
+      <!-- Exhibitions -->
+      <section id="exhibitions">
+        <div class="section-label">EXHIBITIONS</div>
+
+        <p>2025 · Exhibition list coming soon.</p>
+      </section>
+
+      <!-- About -->
+      <section id="about">
+        <div class="section-label">ABOUT</div>
+
+        <p>Su Seven is a London-based artist working between finance, systems and
+        contemporary painting. Her practice investigates how economic structures,
+        attention flows and emerging technologies reshape inner perception.</p>
+      </section>
+
+      <!-- CV -->
+      <section id="cv">
+        <div class="section-label">CV</div>
+
+        <p>2025 · MA Fine Art · Chelsea College of Arts, London</p>
+        <p>2024 · Selected exhibitions and projects will be added here.</p>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="section-label">CONTACT</div>
+
+        <p>Email: suseven.art@gmail.com</p>
+      </section>
+
     </main>
   </div>
+
+  <!-- 页面切换脚本 -->
+  <script>
+    const menuItems = document.querySelectorAll('.nav a');
+    const sections = document.querySelectorAll('section');
+
+    menuItems.forEach(item => {
+      item.addEventListener('click', () => {
+
+        /* 移除所有菜单激活状态 */
+        menuItems.forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+
+        /* 隐藏所有 section */
+        sections.forEach(sec => sec.classList.remove('active'));
+
+        /* 显示目标 section */
+        const target = item.getAttribute('data-target');
+        document.getElementById(target).classList.add('active');
+      });
+    });
+  </script>
+
 </body>
 </html>
