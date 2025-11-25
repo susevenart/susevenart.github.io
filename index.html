@@ -13,323 +13,166 @@
       line-height: 1.6;
     }
     a { color: inherit; text-decoration: none; }
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: #f8f8f8ee;
-      border-bottom: 1px solid #e0e0e0;
-      backdrop-filter: blur(8px);
-    }
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 0;
-      font-size: 14px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    nav .logo { font-weight: 600; }
-    nav ul { display: flex; gap: 18px; list-style: none; }
-    nav li { opacity: 0.7; }
-    nav li:hover { opacity: 1; }
 
-    main { padding: 40px 0 80px; }
-
-    /* Hero */
-    .hero {
+    .layout {
       display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
-      gap: 40px;
-      align-items: center;
-      padding: 40px 0 60px;
-      border-bottom: 1px solid #e5e5e5;
+      grid-template-columns: 220px minmax(0, 1fr);
+      min-height: 100vh;
     }
-    .hero-title {
-      font-size: 32px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-    .hero-subtitle {
-      font-size: 16px;
-      margin-bottom: 20px;
-      opacity: 0.8;
-    }
-    .hero-text { font-size: 14px; max-width: 36rem; opacity: 0.9; }
-    .hero-meta { font-size: 13px; opacity: 0.7; margin-top: 12px; }
 
-    .hero-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-      border: 1px solid #ececec;
-      min-height: 220px;
+    /* 左侧竖排菜单 */
+    .sidebar {
+      padding: 24px 20px;
+      border-right: 1px solid #e3e3e3;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 32px;
     }
-    .hero-card-label {
+
+    .name {
+      font-size: 18px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    .nav {
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .nav a {
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.7;
+    }
+
+    .nav a.active,
+    .nav a:hover {
+      opacity: 1;
+      background: #e4f4de;
+      padding: 2px 4px;
+      margin-left: -4px;
+      border-radius: 3px;
+    }
+
+    .sidebar-meta {
+      margin-top: auto;
       font-size: 11px;
+      opacity: 0.6;
+    }
+
+    /* 右侧作品区域 */
+    .content {
+      padding: 24px 24px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .section-label {
+      font-size: 12px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       opacity: 0.6;
-      margin-bottom: 10px;
-    }
-    .hero-card-title {
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-    .hero-card-text {
-      font-size: 13px;
-      opacity: 0.8;
     }
 
-    /* Section */
-    section { padding: 40px 0; }
-    section + section { border-top: 1px solid #e5e5e5; }
-    .section-title {
-      font-size: 14px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      opacity: 0.8;
-    }
-
-    /* Works grid */
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 22px;
-    }
-    .work-card {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 12px 12px 14px;
-      border: 1px solid #ececec;
-    }
-    .work-thumb {
-      background: #dfe8f2;
-      border-radius: 8px;
-      width: 100%;
-      padding-top: 70%;
-      position: relative;
+    .hero-work {
+      flex: 1;
+      background: #dce6f7;
+      border-radius: 6px;
       overflow: hidden;
-    }
-    .work-thumb span {
-      position: absolute;
-      inset: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
-      letter-spacing: 0.14em;
+      position: relative;
+    }
+
+    /* 这里以后可以换成真正作品图片 */
+    .hero-placeholder {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-placeholder-title {
+      font-size: 14px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: #43536c;
-      opacity: 0.8;
+      margin-bottom: 8px;
     }
-    .work-meta {
-      margin-top: 10px;
+
+    .hero-placeholder-meta {
       font-size: 12px;
+      opacity: 0.75;
     }
-    .work-title { font-weight: 500; }
-    .work-info { opacity: 0.7; margin-top: 4px; }
 
-    /* Two-column layout */
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
-      gap: 40px;
-    }
-    .text-sm { font-size: 13px; opacity: 0.9; }
-    .muted { opacity: 0.7; }
-
-    ul.plain { list-style: none; padding-left: 0; }
-    ul.plain li { margin-bottom: 8px; }
-
-    footer {
-      border-top: 1px solid #e5e5e5;
-      padding: 18px 0 26px;
-      font-size: 12px;
-      opacity: 0.7;
-    }
-    footer a { text-decoration: underline; text-decoration-thickness: 1px; }
-
-    @media (max-width: 780px) {
-      .hero { grid-template-columns: 1fr; }
-      .two-col { grid-template-columns: 1fr; }
-      nav { flex-direction: column; align-items: flex-start; gap: 6px; }
+    /* 响应式：窄屏时上下布局 */
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #e3e3e3;
+        flex-direction: row;
+        align-items: flex-end;
+        gap: 16px;
+      }
+      .sidebar-meta {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">SU SEVEN ART</div>
-        <ul>
-          <li><a href="#works">Works</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#cv">CV</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+  <div class="layout">
+    <!-- 左边菜单 -->
+    <aside class="sidebar">
+      <div class="name">
+        SU SEVEN<br />
+        ART
+      </div>
+
+      <nav class="nav">
+        <!-- 现在先做锚点，后面可以改成独立页面 sculpture.html 等 -->
+        <a href="#sculpture" class="active">Sculpture / Installation</a>
+        <a href="#painting">Painting</a>
+        <a href="#video">Video</a>
+        <a href="#exhibitions">Exhibitions</a>
+        <a href="#about">About</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
       </nav>
-    </div>
-  </header>
 
-  <main>
-    <div class="container">
-      <!-- Hero -->
-           <section class="hero" id="top">
-        <div>
-          <div class="hero-title">SU SEVEN</div>
-          <p class="hero-subtitle">Artist based in London.</p>
-          <p class="hero-meta">
-            <a href="#works">Works</a> ·
-            <a href="#about">About</a> ·
-            <a href="#cv">CV</a> ·
-            <a href="#contact">Contact</a>
-          </p>
-        </div>
-      </section>
-      <!-- Works -->
-      <section id="works">
-        <div class="section-title">Selected works</div>
-        <div class="works-grid">
-          <!-- Work 1 -->
-          <article class="work-card">
-            <div class="work-thumb">
-              <span>PAINTING 01</span>
-            </div>
-            <div class="work-meta">
-              <div class="work-title">Blue Circuit (working title)</div>
-              <div class="work-info">Oil on canvas · 60 × 80 cm · 2025</div>
-            </div>
-          </article>
+      <div class="sidebar-meta">
+        Based in London<br/>
+        Email: <a href="mailto:suseven.art@gmail.com">suseven.art@gmail.com</a>
+      </div>
+    </aside>
 
-          <!-- Work 2 -->
-          <article class="work-card">
-            <div class="work-thumb">
-              <span>INSTALLATION</span>
-            </div>
-            <div class="work-meta">
-              <div class="work-title">The Next Human Condition</div>
-              <div class="work-info">Mixed media · Variable size · 2025</div>
-            </div>
-          </article>
-
-          <!-- Work 3 -->
-          <article class="work-card">
-            <div class="work-thumb">
-              <span>PAINTING 02</span>
-            </div>
-            <div class="work-meta">
-              <div class="work-title">Attention Funnel Study</div>
-              <div class="work-info">Oil & acrylic on panel · 40 × 50 cm · 2024</div>
-            </div>
-          </article>
-
-          <!-- Work 4 -->
-          <article class="work-card">
-            <div class="work-thumb">
-              <span>DIGITAL / TEXT</span>
-            </div>
-            <div class="work-meta">
-              <div class="work-title">Ascent into Intimacy</div>
-              <div class="work-info">Video / text project · 2024</div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <!-- About -->
-      <section id="about">
-        <div class="section-title">About</div>
-        <div class="two-col">
-          <div class="text-sm">
-            <p>
-              Su Seven (Hui Su) is a London-based artist with a background in finance. Working between
-              painting, installation and text, her practice examines how economic structures,
-              global trade and algorithmic systems leak into intimate, psychological space.
-            </p>
-            <br />
-            <p>
-              She often uses blue and green tones, modular forms and fragmented diagrams to visualise
-              flows of value, attention and desire. Rather than illustrating theory, the work tries
-              to condense complex systems into quiet, tangible images.
-            </p>
-          </div>
-          <div class="text-sm muted">
-            <p>
-              Born in China · Lives and works in London.<br />
-              Previous career in finance before transitioning into full-time artistic practice.
-            </p>
+    <!-- 右边内容：先只放雕塑大图，占满屏 -->
+    <main class="content">
+      <div class="section-label" id="sculpture">SCULPTURE / INSTALLATION</div>
+      <section class="hero-work">
+        <!-- 以后这里换成真正的图片 -->
+        <div class="hero-placeholder">
+          <div class="hero-placeholder-title">MAIN SCULPTURE / INSTALLATION</div>
+          <div class="hero-placeholder-meta">
+            在这里放你最想作为首页的大作品照片。<br/>
+            之后可以替换成真正图片（jpg / png），或者嵌入多张轮播。
           </div>
         </div>
       </section>
 
-      <!-- CV / Exhibitions -->
-      <section id="cv">
-        <div class="section-title">Selected exhibitions & education</div>
-        <div class="two-col">
-          <div>
-            <div class="text-sm">
-              <strong>Selected exhibitions</strong>
-              <ul class="plain">
-                <li>2025 · Group show, King’s Cross, London · Oil paintings</li>
-                <li>2025 · The Next Human Condition · Installation, Chelsea College of Arts</li>
-                <li>2024 · Ascent into Intimacy · Video project (elevator series)</li>
-              </ul>
-            </div>
-          </div>
-          <div>
-            <div class="text-sm">
-              <strong>Education</strong>
-              <ul class="plain">
-                <li>2024– · MA Fine Art, Chelsea College of Arts, UAL, London</li>
-                <li>MSc Finance, Shanghai University</li>
-                <li>BA International Economics & Trade, Hefei Normal University</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact">
-        <div class="section-title">Contact</div>
-        <div class="two-col">
-          <div class="text-sm">
-            <p>
-              For exhibitions, collaborations or studio visits, please get in touch.
-            </p>
-          </div>
-          <div class="text-sm">
-            <p>
-              Email: <a href="mailto:suseven.art@gmail.com">suseven.art@gmail.com</a><br />
-              Instagram: <em>(add later)</em><br />
-              Location: London, United Kingdom
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-    <div class="container">
-      © <span id="year"></span> SU SEVEN · All rights reserved.
-    </div>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-  </footer>
+      <!-- 下面这些只是锚点占位，先空着，以后想做再慢慢填 -->
+      <div id="painting"></div>
+      <div id="video"></div>
+      <div id="exhibitions"></div>
+      <div id="about"></div>
+      <div id="cv"></div>
+      <div id="contact"></div>
+    </main>
+  </div>
 </body>
 </html>
