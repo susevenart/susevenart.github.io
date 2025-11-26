@@ -82,7 +82,49 @@
   </style>
 </head>
 
-<body>
+<body>.work-block {
+  margin-bottom: 56px;
+}
+
+.work-block h3 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.work-medium {
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.work-images {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.work-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.work-desc {
+  max-width: 720px;
+  color: #333;
+}
+
+/* 大屏时，五张单独作品会自动两列排版，整体视图占一整行 */
+@media (min-width: 900px) {
+  .work-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .work-images img:first-child {
+    grid-column: 1 / -1;
+  }
+}
   <div class="layout">
 
     <!-- 左侧菜单 -->
