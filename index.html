@@ -100,6 +100,15 @@
         grid-column: 1 / -1; /* 第一张占整行 */
       }
     }
+    /* Painting images: keep elegant size */
+.painting-img {
+  width: 100%;
+  max-width: 800px;  /* 控制画作最大宽度 */
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  display: block;
+}
   </style>
 </head>
 
@@ -212,18 +221,11 @@
     <h3>Perception</h3>
     <p class="work-medium">Painting · 2025</p>
 
-    <div class="painting-images">
-      <img src="perception-01.jpeg" alt="Perception painting 01">
-      <img src="perception-02.jpeg" alt="Perception painting 02">
-      <img src="perception-03.jpeg" alt="Perception painting 03">
-      <img src="perception-04.jpeg" alt="Perception painting 04">
-      <img src="perception-05.jpeg" alt="Perception painting 05">
-    </div>
-
-    <p class="work-desc">
-      A painting series exploring perception, depth and the shifting boundaries 
-      between sensation, memory and inner landscapes.
-    </p>
+    <img src="perception-01.jpeg" class="painting-img">
+    <img src="perception-02.jpeg" class="painting-img">
+    <img src="perception-03.jpeg" class="painting-img">
+    <img src="perception-04.jpeg" class="painting-img">
+    <img src="perception-05.jpeg" class="painting-img">
   </div>
 </section>
 
