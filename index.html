@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title></title>
+  <title>Su — Art Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -53,18 +54,13 @@
       border-radius: 3px;
     }
 
-    /* 右侧内容区域 */
+    /* 右侧内容 */
     .content {
       padding: 32px 32px 80px;
     }
 
-    section {
-      display: none; /* 默认全部隐藏 */
-    }
-
-    section.active {
-      display: block; /* 被选中的显示 */
-    }
+    section { display: none; }
+    section.active { display: block; }
 
     .section-label {
       font-size: 12px;
@@ -74,57 +70,42 @@
       margin-bottom: 12px;
     }
 
-    /* 内容段落美化 */
     section p {
       margin-bottom: 12px;
       max-width: 700px;
     }
+
+    /* 作品区块 */
+    .work-images {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .work-images img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
+    /* 大屏幕两列排版 */
+    @media (min-width: 900px) {
+      .work-images {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .work-images img:first-child {
+        grid-column: 1 / -1; /* 第一张占整行 */
+      }
+    }
   </style>
 </head>
 
-<body>.work-block {
-  margin-bottom: 56px;
-}
 
-.work-block h3 {
-  font-size: 20px;
-  margin-bottom: 4px;
-}
+<body>
 
-.work-medium {
-  color: #555;
-  margin-bottom: 16px;
-}
-
-.work-images {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.work-image {
-  width: 100%;
-  height: auto;
-  border-radius: 4px;
-}
-
-.work-desc {
-  max-width: 720px;
-  color: #333;
-}
-
-/* 大屏时，五张单独作品会自动两列排版，整体视图占一整行 */
-@media (min-width: 900px) {
-  .work-images {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .work-images img:first-child {
-    grid-column: 1 / -1;
-  }
-}
   <div class="layout">
 
     <!-- 左侧菜单 -->
@@ -145,69 +126,75 @@
     <!-- 右侧内容 -->
     <main class="content">
 
-      <!-- Sculpture -->
-<section id="sculpture" class="section">
-    <h2 class="section-label">SCULPTURE</h2>
 
-    <h3>Deficit</h3>
-    <p>Sculpture series · 2023</p>
+<!-- ░░░ Sculpture Section ░░░ -->
+<section id="sculpture" class="active">
+  <h2 class="section-label">SCULPTURE</h2>
 
-    <div class="work-images">
-        <img src="deficit-overview.png" alt="Deficit installation view">
-        <img src="deficit-01.png" alt="Deficit sculpture 01">
-        <img src="deficit-02.png" alt="Deficit sculpture 02">
-        <img src="deficit-03.png" alt="Deficit sculpture 03">
-        <img src="deficit-04.png" alt="Deficit sculpture 04">
-        <img src="deficit-05.png" alt="Deficit sculpture 05">
-    </div>
+  <h3>Deficit</h3>
+  <p>Sculpture series · 2023</p>
 
-    <p>
-        A series of five sculptures exploring erosion, meaninglessness and exhaustion 
-        in contemporary work structures, using bonsai forms, natural fragments 
-        and everyday industrial materials.
-    </p>
+  <div class="work-images">
+    <img src="deficit-overview.png" alt="Deficit installation view">
+    <img src="deficit-01.png" alt="Deficit sculpture 01">
+    <img src="deficit-02.png" alt="Deficit sculpture 02">
+    <img src="deficit-03.png" alt="Deficit sculpture 03">
+    <img src="deficit-04.png" alt="Deficit sculpture 04">
+    <img src="deficit-05.png" alt="Deficit sculpture 05">
+  </div>
+
+  <p>A series of five sculptures exploring erosion, meaninglessness and exhaustion 
+  in contemporary work structures, using bonsai forms, natural fragments 
+  and everyday industrial materials.</p>
 </section>
 
-      <!-- Painting -->
-      <section id="painting">
-        <div class="section-label">PAINTING</div>
 
-        <p><strong>For What?</strong> · painting  
-        Part of an ongoing series questioning purpose and productivity.</p>
 
-        <p><strong>Perception</strong> · painting  
-        Exploring how perception and cognition are shaped by internal systems.</p>
-      </section>
+<!-- ░░░ Painting ░░░ -->
+<section id="painting">
+  <div class="section-label">PAINTING</div>
 
-      <!-- Video -->
-      <section id="video">
-        <div class="section-label">VIDEO</div>
+  <p><strong>For What?</strong> · painting  
+  Part of an ongoing series questioning purpose and productivity.</p>
 
-        <p><strong>Stone’s Talk</strong> · video  
-        A conversation with non-human time through stones and slow images.</p>
-      </section>
+  <p><strong>Perception</strong> · painting  
+  Exploring how perception and cognition are shaped by internal systems.</p>
+</section>
 
-      <!-- Exhibitions -->
-      <section id="exhibitions">
-        <div class="section-label">EXHIBITIONS</div>
 
-        <p>2025 · Exhibition list coming soon.</p>
-      </section>
 
-      <!-- About -->
-      <section id="about">
+<!-- ░░░ Video ░░░ -->
+<section id="video">
+  <div class="section-label">VIDEO</div>
+
+  <p><strong>Stone’s Talk</strong> · video  
+  A conversation with non-human time through stones and slow images.</p>
+</section>
+
+
+
+<!-- ░░░ Exhibitions ░░░ -->
+<section id="exhibitions">
+  <div class="section-label">EXHIBITIONS</div>
+  <p>2025 · Exhibition list coming soon.</p>
+</section>
+
+
+
+<!-- ░░░ About ░░░ -->
+<section id="about">
   <div class="section-label">ABOUT</div>
 
   <p>
-    Su is a London-based artist whose practice moves between sculpture, 
-    installation, painting and text. With a background in finance, she examines 
-    the invisible systems that shape contemporary life—economic flows, 
-    algorithmic structures, attention, and the perception of value.
+    Su is a London-based artist whose practice moves between sculpture, installation, 
+    painting and text. With a background in finance, she examines the invisible 
+    systems that shape contemporary life—economic flows, algorithmic structures, 
+    attention, and the perception of value.
   </p>
 
   <p>
     Her work often begins with rational diagrams, market logic or technological 
-    metaphors, but gradually departs from them, entering a more speculative, 
+    metaphors, but gradually departs from them, entering a speculative, 
     psychological space. Through restrained forms, modular structures and quiet 
     colour fields, she attempts to visualise how external systems leak into 
     the body: how they reorganise memory, intimacy and the sense of self.
@@ -216,52 +203,43 @@
   <p>
     Rather than representing data or illustrating theories, her practice seeks 
     a subtler transformation—turning abstraction into something experiential, 
-    and translating systemic tension into material presence. The works are 
-    less about explanation and more about the conditions that make a certain 
-    image, gesture or structure possible.
-  </p>
-
-  <p>
-    Originally trained in economics and finance, she brings analytical thinking 
-    into the studio while resisting its limits. This dual grounding allows her 
-    to move fluidly between conceptual research and embodied making, producing 
-    works that sit between clarity and ambiguity, structure and emotion.
+    translating systemic tension into material presence.
   </p>
 </section>
 
-      <!-- CV -->
-     <section id="cv">
-  <div class="section-title">CV</div>
+
+
+<!-- ░░░ CV ░░░ -->
+<section id="cv">
+  <div class="section-label">CV</div>
 
   <h3>EDUCATION</h3>
   <p><strong>2024 – Present</strong> · MA Fine Art, Chelsea College of Arts, UAL, London</p>
-  <p><strong>2017 – 2019</strong> · Master of Finance, SILC Business School, Shanghai University, Shanghai</p>
+  <p><strong>2017 – 2019</strong> · Master of Finance, Shanghai University, Shanghai</p>
 
   <h3>SELECTED EXHIBITIONS</h3>
-  <p><strong>2025</strong> · “Digital Melting”, Painting & Video Installation, <em>Tate Britain × Anthropic AI Residency Showcase</em>, London</p>
-  <p><strong>2025</strong> · “Blue Chamber” & “Interbeing Figures”, Painting, <em>Yun Ye Gallery</em>, London</p>
-  <p><strong>2024</strong> · “Reflections of Self”, Sculpture, <em>The Cookhouse</em>, London</p>
-  <p><strong>2024</strong> · “One Thing Leads to Another”, Performance, <em>The Cookhouse</em>, London</p>
-  <p><strong>2023</strong> · “Deficit”, Sculpture, <em>Westwater Workshop</em>, Shanghai</p>
-  <p><strong>2023</strong> · “Stone’s Talk”, Film, <em>Westwater Workshop</em>, Shanghai</p>
-  <p><strong>2023</strong> · “Soccer Tribe”, Installation, <em>Shanghai Botanical Garden</em>, Shanghai</p>
-  <p><strong>2023</strong> · “Whispers of Existence”, Paintings, <em>Westwater Workshop</em>, Shanghai</p>
-  <p><strong>2022</strong> · “Unexpected Audience”, Painting, <em>Westwater Workshop</em>, Shanghai</p>
-  <p><strong>2022</strong> · “Eye in the Rain”, Painting, <em>Chili Studio</em>, Shanghai</p>
-  <p><strong>2021</strong> · “Harmony in Form”, Sculpture, <em>Shengjing Bonsai Garden</em>, Shanghai</p>
+  <p><strong>2025</strong> · “Digital Melting”, Tate Britain × Anthropic AI Residency, London</p>
+  <p><strong>2025</strong> · “Blue Chamber” & “Interbeing Figures”, Yun Ye Gallery, London</p>
+  <p><strong>2024</strong> · “Reflections of Self”, The Cookhouse, London</p>
+  <p><strong>2024</strong> · “One Thing Leads to Another”, The Cookhouse, London</p>
+  <p><strong>2023</strong> · “Deficit”, Westwater Workshop, Shanghai</p>
+  <p><strong>2023</strong> · “Stone’s Talk”, Westwater Workshop, Shanghai</p>
+  <p><strong>2023</strong> · “Soccer Tribe”, Shanghai Botanical Garden</p>
+  <p><strong>2023</strong> · “Whispers of Existence”, Westwater Workshop</p>
+  <p><strong>2022</strong> · “Unexpected Audience”, Westwater Workshop</p>
+  <p><strong>2022</strong> · “Eye in the Rain”, Chili Studio</p>
+  <p><strong>2021</strong> · “Harmony in Form”, Shengjing Bonsai Garden</p>
 
   <h3>RESIDENCIES</h3>
-  <p><strong>2025</strong> · Tate Britain × Anthropic AI Art Residency, London</p>
-  <p><strong>2021</strong> · Bonsai Sculpture Residency, <em>Shengjing Bonsai Garden</em>, Shanghai</p>
-
-  <h3>ART PROJECTS</h3>
-  <p><strong>2021</strong> · “Transcendence: The Essence of Nature” — Installation exploring humanity’s relationship with nature, exhibited at <em>Anqing Botanical Garden</em>.</p>
-  <p><strong>2021</strong> · “Rooted in Culture” — Bonsai root sculpture series symbolizing heritage and identity, showcased at <em>Shengjing Bonsai Garden</em>.</p>
+  <p><strong>2025</strong> · Tate Britain × Anthropic AI Art Residency</p>
+  <p><strong>2021</strong> · Bonsai Sculpture Residency, Shengjing Bonsai Garden</p>
 
 </section>
 
-      <!-- Contact -->
-   <section id="contact">
+
+
+<!-- ░░░ Contact ░░░ -->
+<section id="contact">
   <div class="section-label">CONTACT</div>
 
   <p><strong>Email</strong><br>
@@ -280,27 +258,22 @@
     </main>
   </div>
 
-  <!-- 页面切换脚本 -->
-  <script>
-    const menuItems = document.querySelectorAll('.nav a');
-    const sections = document.querySelectorAll('section');
 
-    menuItems.forEach(item => {
-      item.addEventListener('click', () => {
+<script>
+  const menuItems = document.querySelectorAll('.nav a');
+  const sections = document.querySelectorAll('section');
 
-        /* 移除所有菜单激活状态 */
-        menuItems.forEach(i => i.classList.remove('active'));
-        item.classList.add('active');
+  menuItems.forEach(item => {
+    item.addEventListener('click', () => {
 
-        /* 隐藏所有 section */
-        sections.forEach(sec => sec.classList.remove('active'));
+      menuItems.forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
 
-        /* 显示目标 section */
-        const target = item.getAttribute('data-target');
-        document.getElementById(target).classList.add('active');
-      });
+      sections.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(item.dataset.target).classList.add('active');
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
